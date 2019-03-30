@@ -19,5 +19,13 @@ class Title(QtWidgets.QLabel):
 
     def __init__(self, text):
         super(Title, self).__init__(text)
-        self.setAlignment(Qt.AlignTop)        
+        self.setAlignment(Qt.AlignCenter)
+        self.setWordWrap(True)
+
+
+class Text(QtWidgets.QLabel):
+
+    def __init__(self, text):
+        super(Text, self).__init__(text)
+        self.setAlignment(Qt.AlignLeft)
         self.setWordWrap(True)

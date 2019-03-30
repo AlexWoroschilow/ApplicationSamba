@@ -23,7 +23,6 @@ from PyQt5.QtCore import Qt
 
 
 class Loader(Loader):
-
     @property
     def enabled(self):
         return True
@@ -34,7 +33,7 @@ class Loader(Loader):
         if options is None or args is None: return self
 
         binder.bind_to_constructor('window.dashboard', self._widget)
-        
+
     @inject.params(widget='window.dashboard')
     def boot(self, binder, options=None, args=None, widget=None):
         if options is None or args is None: return self
@@ -44,5 +43,13 @@ class Loader(Loader):
     def _widget(self, window=None):
         if window is None: return None
         from .gui.widget import DashboardWidget
-        window.setMainWidget(DashboardWidget())
 
+        widget = DashboardWidget()
+        widget.start.connect(self.test)
+        widget.networkname.connect(self.test)
+        widget.source.connect(self.test)
+
+        window.setMainWidget(widget)
+
+    def test(self, event):
+        print(event)
