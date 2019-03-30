@@ -1,0 +1,28 @@
+QMainWindow {
+	background: #ffffff;
+}
+
+Title {
+	font-size: 20px;
+	margin: 0px 20px 0px 20px;
+	text-align: center;
+}
+
+StartButton {
+	padding: 50px 35px 50px 65px ; 
+	margin: 0px 30px 0px 30px;
+}
+
+
+SourceButton {
+	font-size: 18px;
+	margin: 0px 20px 0px 20px;
+	text-align: center;	
+	padding: 20px;
+}
+
+
+QLineEdit {
+	margin: 0px 20px 20px 20px;
+	font-size: 18px;	
+}
